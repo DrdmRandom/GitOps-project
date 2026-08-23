@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: practice
+  namespace: default
+data:
+  message: "hello from gitops"
