@@ -7,7 +7,8 @@ spec:
   replicas: 1
   template:
     spec:
-      organization: DrdmRandom
+      repository:
+        - DrdmRandom/linker-url-shorterner 
       serviceAccountName: arc-runner-sa
       labels:
         - homelab
