@@ -7,7 +7,7 @@ spec:
   replicas: 1
   template:
     spec:
-      repository: DrdmRandom/GitOps-project
+      repository: DrdmRandom
       serviceAccountName: arc-runner-sa
       labels:
         - homelab
