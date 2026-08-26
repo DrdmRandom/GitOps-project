@@ -19,6 +19,8 @@ spec:
   # These values override your values.yaml
   values:
     image:
-      repository: 192.168.100.42:3001/linker
+      repository: api-registry.cihuyproject.my.id/linker
       tag: latest
-    # Add any other values your chart needs (like service.port, etc.)
+    imagePullSecrets:
+      - name: regsitry-credentials
+    
