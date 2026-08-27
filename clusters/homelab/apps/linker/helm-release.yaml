@@ -24,3 +24,14 @@ spec:
     imagePullSecrets:
       - name: registry-credentials
     
+  ingress:
+        enabled: true
+        className: nginx
+        annotations:
+          # If you are using Caddy for SSL, you might not need cert-manager here.
+          # Caddy will handle the HTTPS, and talk to K3s via HTTP.
+        hosts:
+          - host: linker.cihuyproject.my.id   # <-- Use your actual domain!
+            paths:
+              - path: /
+                pathType: Prefix
