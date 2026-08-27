@@ -22,5 +22,5 @@ spec:
       repository: api-registry.cihuyproject.my.id/linker
       tag: latest
     imagePullSecrets:
-      - name: regsitry-credentials
+      - name: registry-credentials
     
