@@ -30,3 +30,14 @@ spec:
             - path: /
               pathType: Prefix
     publicBaseUrl: "https://linker.cihuyproject.my.id"
+    google:
+      enabled: true
+  valuesFrom:
+    - kind: Secret
+      name: google-oauth-credentials
+      valuesKey: clientId
+      targetPath: google.clientId
+    - kind: Secret
+      name: google-oauth-credentials
+      valuesKey: clientSecret
+      targetPath: google.clientSecret
