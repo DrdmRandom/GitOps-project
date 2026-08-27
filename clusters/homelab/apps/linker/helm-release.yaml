@@ -8,30 +8,25 @@ spec:
   targetNamespace: linker
   chart:
     spec:
-      # IMPORTANT: If your Chart.yaml is in a subfolder (e.g., charts/linker),
-      # change this to that path. If it's at the root of the repo, keep it as ./
       chart: ./linker
       sourceRef:
         kind: GitRepository
         name: linker-helm-chart
         namespace: flux-system
       interval: 1m
-  # These values override your values.yaml
   values:
     image:
       repository: api-registry.cihuyproject.my.id/linker
       tag: latest
     imagePullSecrets:
       - name: registry-credentials
-    
-  ingress:
-        enabled: true
-        className: nginx
-        annotations:
-          # If you are using Caddy for SSL, you might not need cert-manager here.
-          # Caddy will handle the HTTPS, and talk to K3s via HTTP.
-        hosts:
-          - host: linker.cihuyproject.my.id   # <-- Use your actual domain!
-            paths:
-              - path: /
-                pathType: Prefix
+    ingress:
+      enabled: true
+      className: nginx
+      annotations: {}
+      hosts:
+        - host: linker.cihuyproject.my.id
+          paths:
+            - path: /
+              pathType: Prefix
+    publicBaseUrl: "https://linker.cihuyproject.my.id"
