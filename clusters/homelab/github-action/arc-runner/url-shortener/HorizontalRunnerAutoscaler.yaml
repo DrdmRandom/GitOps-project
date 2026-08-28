@@ -1,0 +1,12 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: HorizontalRunnerAutoscaler
+metadata:
+  name: url-shortener-autoscaler
+  namespace: arc-runners
+spec:
+  scaleTargetRef:
+    kind: RunnerDeployment
+    name: url-shortener-runner
+  minReplicas: 0
+  maxReplicas: 1
+  scaleDownDelaySecondsAfterScaleOut: 600

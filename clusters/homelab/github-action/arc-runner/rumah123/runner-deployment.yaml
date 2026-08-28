@@ -1,0 +1,20 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: rumah123-test-runner
+  namespace: arc-runners-rumah123
+spec:
+  replicas: 1
+  template:
+    spec:
+      repository: DawwiRDM/rumah123-directory-pages
+      serviceAccountName: arc-runner-sa-rumah123
+      labels:
+        - rumah123-portal-runner
+      resources:
+        requests:
+          cpu: "1"
+          memory: "1Gi"
+        limits:
+          cpu: "4"
+          memory: "6Gi"
