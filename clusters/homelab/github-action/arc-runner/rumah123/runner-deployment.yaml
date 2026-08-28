@@ -9,6 +9,9 @@ spec:
     spec:
       repository: DawwiRDM/rumah123-directory-pages
       serviceAccountName: arc-runner-sa-rumah123
+      githubTokenRef:
+        name: rumah123-pat-secret
+        key: github_token
       labels:
         - rumah123-portal-runner
       resources:
